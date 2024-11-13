@@ -1,52 +1,49 @@
-let pantalla = document.getElementById("pantalla");
-let operador = "";
-let num1 = 0;
-let num2 = 0;
+let numero1 = 0;
+let numero2 = 0;
+let operacionActual = "";
 
-document.getElementById("n1").addEventListener("input", function() {
-    num1 = parseFloat(this.value) || 0;
-});
+function seleccionarOperador(operador) {
+    document.getElementById("pantalla").textContent = operador;
+    operacionActual = operador;
+}
 
-document.getElementById("n2").addEventListener("input", function() {
-    num2 = parseFloat(this.value) || 0;
-});
-
-document.querySelectorAll("button[name='operador']").forEach(boton => {
-    boton.addEventListener("click", function() {
-        operador = this.textContent;
-        pantalla.textContent = operador;
-    });
-});
-
-document.getElementById("igual").addEventListener("click", function() {
-    let resultado = 0;
-    switch (operador) {
-        case "%":
-            resultado = num1 % num2;
-            break;
-        case "+":
-            resultado = num1 + num2;
-            break;
-        case "-":
-            resultado = num1 - num2;
-            break;
-        case "/":
-            resultado = num2 !== 0 ? num1 / num2 : "Error";
-            break;
-        case "x":
-            resultado = num1 * num2;
-            break;
-        default:
-            resultado = "Operador no válido";
-    }
-    pantalla.textContent = resultado;
-});
-
-document.getElementById("reiniciar").addEventListener("click", function() {
-    num1 = 0;
-    num2 = 0;
-    operador = "";
-    pantalla.textContent = "0";
+function resetearPantalla() {
+    numero1 = 0;
+    numero2 = 0;
+    operacionActual = "";
+    document.getElementById("pantalla").textContent = "0";
     document.getElementById("n1").value = "";
     document.getElementById("n2").value = "";
-});
+}
+
+function calcularResultado() {
+    numero1 = parseFloat(document.getElementById("n1").value);
+    numero2 = parseFloat(document.getElementById("n2").value);
+
+    if (isNaN(numero1) || isNaN(numero2)) {
+        document.getElementById("pantalla").textContent = "Error";
+        return;
+    }
+
+    let resultado = 0;
+    switch (operacionActual) {
+        case "%":
+            resultado = numero1 % numero2;
+            break;
+        case "+":
+            resultado = numero1 + numero2;
+            break;
+        case "-":
+            resultado = numero1 - numero2;
+            break;
+        case "/":
+            resultado = numero1 / numero2;
+            break;
+        case "x":
+            resultado = numero1 * numero2;
+            break;
+        default:
+            resultado = "Error";
+    }
+    document.getElementById("pantalla").textContent = resultado;
+}

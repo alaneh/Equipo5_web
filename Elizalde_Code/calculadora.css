@@ -66,9 +66,8 @@ button:active {
     background-color: #2c313c;
 }
 
-button.reiniciar {
+button#resetear {
     background-color: #d9534f;
-    grid-column: span 2;
 }
 
 button.reiniciar:hover {
@@ -77,7 +76,7 @@ button.reiniciar:hover {
 
 button.igual {
     background-color: #5cb85c;
-    grid-column: span 1;
+    grid-column: span 3;
 }
 
 button.igual:hover {

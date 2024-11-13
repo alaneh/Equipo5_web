@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="calculadora.css">
+    <link rel="stylesheet" href="./calculadora.css">
 </head>
 
 <body>
@@ -14,16 +14,16 @@
         <div class="botones">
             <input type="number" id="n1">
             <input type="number" id="n2">
-            <button name="operador">%</button>
-            <button name="operador">+</button>
-            <button name="operador">-</button>
-            <button name="operador">/</button>
-            <button name="operador">x</button>
-            <button id="reiniciar" class="reiniciar">REINICIAR</button>
-            <button id="igual" class="igual">=</button>
+            <button onclick="seleccionarOperador('%')" name="operador">%</button>
+            <button onclick="seleccionarOperador('+')" name="operador">+</button>
+            <button onclick="seleccionarOperador('-')" name="operador">-</button>
+            <button onclick="seleccionarOperador('/')" name="operador">/</button>
+            <button onclick="seleccionarOperador('x')" name="operador">x</button>
+            <button id="resetear" class="resetear" onclick="resetearPantalla()">RESET</button>
+            <button id="igual" class="igual" onclick="calcularResultado()">=</button>
         </div>
     </div>
-    <script type="text/javascript" src="calculadora.js"></script>
+    <script src="calculadora.js"></script>
 </body>
 
 </html>
