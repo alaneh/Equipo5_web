@@ -161,3 +161,92 @@ a:hover{
     flex-wrap: wrap;
   }
 }
+/* Estilo base del carrusel */
+.carousel-item img {
+  object-fit: cover; /* Las imágenes llenarán el contenedor manteniendo su proporción */
+  width: 100%;       /* Asegura que siempre ocupe todo el ancho del contenedor */
+  height: auto;      /* Se adapta automáticamente al ancho */
+  max-height: 75vh;  /* Limita la altura en dispositivos grandes */
+}
+
+/* Personalización del control del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  border-radius: 50%;                  /* Iconos redondeados */
+  width: 40px;
+  height: 40px;
+}
+
+/* Tarjeta personalizada superpuesta */
+.custom-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 80%;           /* Ocupa el 80% del contenedor */
+  max-width: 500px;     /* Máximo ancho para pantallas grandes */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card h2,
+.custom-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.custom-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.custom-card .btn {
+  background-color: #124559;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-card .btn:hover {
+  background-color: #274c77;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-card {
+    width: 90%;           /* Ocupa más espacio en dispositivos pequeños */
+    padding: 15px;
+  }
+
+  .custom-card h2,
+  .custom-card h3 {
+    font-size: 1.2rem;    /* Tamaño de fuente reducido */
+  }
+
+  .custom-card p {
+    font-size: 0.9rem;    /* Ajuste proporcional para párrafos */
+  }
+
+  .carousel-item img {
+    max-height: 50vh;     /* Reduce la altura máxima del carrusel */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card {
+    width: 100%;          /* Asegura que ocupe todo el ancho en pantallas pequeñas */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;          /* Iconos más pequeños */
+    height: 30px;
+  }
+}
