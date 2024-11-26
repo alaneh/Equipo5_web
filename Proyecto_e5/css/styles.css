@@ -1,0 +1,252 @@
+*{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.background-left{
+  width: 30%;
+  clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+}
+.background-right{
+  width: 30%;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.background-left img, .background-right img{
+  max-width: 150px;
+  object-fit: contain;
+}
+.navigator{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  text-align: center;
+  width: 100%;
+}
+.logo{
+  max-width: 40%;
+  padding: 10px;
+  margin: 0 auto;
+}
+.set-color1{
+  background-color: #01161E;
+}
+.set-color2{
+  background-color: #124559;
+}
+.set-color3{
+  background-color: #274C77;
+}
+.set-color4{
+  background-color: #598392;
+}
+.set-color5{
+  background-color:  #AEC3B0;
+}
+.set-color6{
+  background-color: #DDE7EA;
+}
+a:link{
+  color: #A7BED3;
+  text-decoration: none;
+}
+a:visited{
+  color: #FF928B;
+}
+a:hover{
+  color: #EFF6E0;
+}
+.footer{
+  position: fixed; /* El footer se fija al fondo de la ventana */
+  bottom: 0;       /* Posición desde la parte inferior */
+  left: 0;         /* Posición desde la izquierda */
+  width: 100%;     /* Hace que el footer abarque todo el ancho */
+  padding: 20px;  /* Espaciado interno */
+  z-index: 10;    /* Asegura que esté por encima de otros elementos */
+}
+/* Estilo para la tarjeta superpuesta */
+.custom-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+  color: #fff; /* Texto blanco */
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Botón de acción */
+.custom-card .btn {
+  background-color: #124559; /* Color de énfasis 2 */
+  border: none;
+}
+
+.custom-card .btn:hover {
+  background-color: #274C77; /* Énfasis 3 para hover */
+}
+
+.carousel-item img {
+  object-fit: contain; /* Para que las imágenes se adapten correctamente */
+  width: 100%;
+  height: 100%;
+  max-height: 70vh;
+  background-color: rgba(95, 95, 95, 0.599);
+}
+.carousel-control-prev .carousel-control-next{
+  background-color: #01061e;
+}
+/* Contenedor principal */
+.solicitud-casillero {
+  display: flex; /* Utilizamos Flexbox para organizar los elementos en fila */
+  align-items: center; /* Alineamos los elementos verticalmente al centro */
+  justify-content: space-evenly; /* Espaciado entre la imagen y el texto */
+  padding: 20px; /* Espaciado alrededor del contenedor */
+}
+
+/* Imagen */
+.solicitud-casillero img {
+  max-width: 90%; /* La imagen puede crecer hasta el tamaño máximo del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 370px;  /* Puedes ajustar el tamaño de la imagen si lo deseas */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+
+/* Contenedor de texto */
+.texto-solicitud {
+  max-width: 50%; /* Limita el ancho del texto para que no ocupe todo el espacio */
+}
+
+/* Estilo para el título */
+.texto-solicitud h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  color: #333; /* Color del título */
+  margin-bottom: 10px;
+}
+
+/* Estilo para el párrafo */
+.texto-solicitud p {
+  font-size: 1.2rem; /* Tamaño de fuente para los párrafos */
+  line-height: 1.6; /* Espaciado entre líneas */
+  color: #555; /* Color de los párrafos */
+}
+
+/* Hacemos la disposición más adaptativa (responsive) en pantallas pequeñas */
+@media (max-width: 800px) {
+  .solicitud-casillero {
+      flex-direction: column; /* Cambia la disposición a columna en pantallas pequeñas */
+      
+  }
+
+  .solicitud-casillero img {
+      margin-right: 0; /* Elimina el margen a la derecha de la imagen en pantallas pequeñas */
+      margin-bottom: 20px; /* Agrega un margen inferior para separar la imagen del texto */
+      max-width: 300px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+  }
+
+  .texto-solicitud {
+      max-width: 100%; /* El texto ocupará todo el ancho en pantallas pequeñas */
+  }
+  .footer{
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Estilo base del carrusel */
+.carousel-item img {
+  object-fit: cover; /* Las imágenes llenarán el contenedor manteniendo su proporción */
+  width: 100%;       /* Asegura que siempre ocupe todo el ancho del contenedor */
+  height: auto;      /* Se adapta automáticamente al ancho */
+  max-height: 75vh;  /* Limita la altura en dispositivos grandes */
+}
+
+/* Personalización del control del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  border-radius: 50%;                  /* Iconos redondeados */
+  width: 40px;
+  height: 40px;
+}
+
+/* Tarjeta personalizada superpuesta */
+.custom-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 80%;           /* Ocupa el 80% del contenedor */
+  max-width: 500px;     /* Máximo ancho para pantallas grandes */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card h2,
+.custom-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.custom-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.custom-card .btn {
+  background-color: #124559;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-card .btn:hover {
+  background-color: #274c77;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-card {
+    width: 90%;           /* Ocupa más espacio en dispositivos pequeños */
+    padding: 15px;
+  }
+
+  .custom-card h2,
+  .custom-card h3 {
+    font-size: 1.2rem;    /* Tamaño de fuente reducido */
+  }
+
+  .custom-card p {
+    font-size: 0.9rem;    /* Ajuste proporcional para párrafos */
+  }
+
+  .carousel-item img {
+    max-height: 50vh;     /* Reduce la altura máxima del carrusel */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card {
+    width: 100%;          /* Asegura que ocupe todo el ancho en pantallas pequeñas */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;          /* Iconos más pequeños */
+    height: 30px;
+  }
+}

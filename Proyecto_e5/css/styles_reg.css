@@ -1,0 +1,120 @@
+/* Ajustes generales */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(107deg, #FFFAFB 50%, #131515 50%);
+    margin: 0;
+}
+
+.header {
+    height: 180px;
+}
+
+.header-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten si no caben */
+}
+
+.logo-ipn, .logo-escom {
+    max-width: 16%; /* Tamaño máximo inicial */
+    height: auto;
+}
+
+.responsive-header {
+    font-size: calc(1.5rem + 2vw);
+    font-weight: bold;
+    color: #000000;
+    text-shadow: -1px -1px 2px #192e44, 1px 1px 2px #d7e1ff;
+    text-align: center;
+    flex: 1; /* Ocupa espacio disponible */
+}
+
+.card {
+    background-color: #EFF6E0;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones */
+button {
+    background-color: #01161E;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #131515;
+}
+
+button[type="reset"] {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+button[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+/* Ocultar elementos con animación */
+.hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Mostrar elementos con animación */
+.visible {
+    max-height: 100px; /* Ajusta según la altura del contenido */
+    opacity: 1;
+    overflow: visible;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        height: auto; /* Ajuste dinámico */
+    }
+
+    .header-overlay {
+        justify-content: center; /* Centrar elementos en pantallas pequeñas */
+        gap: 10px; /* Separación entre elementos */
+    }
+
+    .logo-ipn, .logo-escom {
+        max-width: 12%; /* Redimensionar logos */
+    }
+
+    .responsive-header {
+        font-size: calc(1.2rem + 1vw); /* Texto más pequeño */
+        text-align: center;
+    }
+
+    .card {
+        border-radius: 20px; /* Menos redondeado en pantallas pequeñas */
+    }
+
+    button {
+        width: 100%; /* Botones ocupan todo el ancho */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-ipn, .logo-escom {
+        max-width: 15%; /* Logos aún más pequeños */
+    }
+
+    .responsive-header {
+        font-size: calc(1rem + 0.8vw); /* Texto más pequeño */
+    }
+
+    .header-overlay {
+        gap: 5px; /* Reducir espacio entre elementos */
+    }
+}

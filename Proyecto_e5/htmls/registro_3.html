@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Registro</title>
+    <link rel="icon" href="../img/icon.webp" type="image/webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles_reg.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-overlay d-flex justify-content-between align-items-center px-4 py-3">
+            <img src="../img/logoIPN.png" alt="IPN Logo" class="logo-ipn">
+            <h1 class="responsive-header">Lockers for Stockers</h1>
+            <img src="../img/logoESCOM.png" alt="ESCOM Logo" class="logo-escom">
+        </div>
+    </header>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 rounded-card" id="summary-section">
+                    <h2 class="text-center mb-4">Resumen del Registro</h2>
+                    <ul class="list-group mb-4">
+                        <!-- Número de Locker (solo si es renovación) -->
+                        <li class="list-group-item">
+                            <strong>Número de Locker:</strong> <span id="numeroLocker"></span>
+                        </li>
+                        <!-- Tipo de Solicitud -->
+                        <li class="list-group-item">
+                            <strong>Tipo de Solicitud:</strong> <span id="tipoSolicitud"></span>
+                        </li>
+                        <!-- Nombre Completo -->
+                        <li class="list-group-item">
+                            <strong>Nombre:</strong> <span id="nombreCompleto"></span>
+                        </li>
+                        <!-- Teléfono -->
+                        <li class="list-group-item">
+                            <strong>Teléfono:</strong> <span id="telefono"></span>
+                        </li>
+                        <!-- Correo -->
+                        <li class="list-group-item">
+                            <strong>Correo:</strong> <span id="correo"></span>
+                        </li>
+                        <!-- Número de Boleta -->
+                        <li class="list-group-item">
+                            <strong>Boleta:</strong> <span id="boleta"></span>
+                        </li>
+                        <!-- Estatura -->
+                        <li class="list-group-item">
+                            <strong>Estatura:</strong> <span id="estatura"></span>
+                        </li>
+                        <!-- Archivos -->
+                        <li class="list-group-item">
+                            <strong>Horario:</strong> <span id="archivoHorario"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Credencial:</strong> <span id="archivoCredencial"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Usuario:</strong> <span id="usuario"></span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <button class="btn btn-primary w-50" id="sendInfoBtn">Enviar mis datos</button>
+                    </div>
+                </div>
+                <div class="card p-4 rounded-card d-none" id="success-section">
+                    <h2 class="text-center text-success">¡Datos enviados exitosamente!</h2>
+                    <div class="text-center mt-4">
+                        <img src="../img/Logotipo.png" alt="Logo" style="width: 50%; height: auto;">
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="../index.html" class="btn btn-secondary">Regresar al Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/registro_3.js"></script>
+</body>
+</html>

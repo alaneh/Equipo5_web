@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="../img/icon.webp" type="image/webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles_reg.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-overlay d-flex justify-content-between align-items-center px-4 py-3">
+            <img src="../img/logoIPN.png" alt="IPN Logo" class="logo-ipn">
+            <h1 class="responsive-header">Lockers for Stockers</h1>
+            <img src="../img/logoESCOM.png" alt="ESCOM Logo" class="logo-escom">
+        </div>
+    </header>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 rounded-card">
+                    <form>
+                        <h2 class="text-center mb-4">Elige el tipo de solicitud</h2>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="solicitud" id="renovacion">
+                            <label class="form-check-label" for="renovacion">Renovación</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="solicitud" id="nueva-solicitud" required>
+                            <label class="form-check-label" for="nueva-solicitud">Solicitar por primera vez</label>
+                        </div>
+                        <div class="mb-3 hidden">
+                            <label for="numeroCasillero" class="form-label">Coloca el número de tu casillero anterior</label>
+                            <input type="text" class="form-control" id="numeroCasillero">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nombre" class="form-label">Nombre(s)</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="apellidoPaterno" class="form-label">Primer Apellido</label>
+                                <input type="text" class="form-control" id="apellidoPaterno" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="apellidoMaterno" class="form-label">Segundo Apellido</label>
+                                <input type="text" class="form-control" id="apellidoMaterno" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo institucional</label>
+                            <input type="email" class="form-control" id="correo" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="boleta" class="form-label">Boleta</label>
+                                <input type="text" class="form-control" id="boleta" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="estatura" class="form-label">Tu estatura</label>
+                                <input type="text" class="form-control" id="estatura" required>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary w-40" id="siguienteBtn">Siguiente</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/registro_1.js"></script>
+</body>
+</html>
