@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const apellidoPaterno = document.querySelector('#apellidoPaterno');
         const apellidoMaterno = document.querySelector('#apellidoMaterno');
         const telefono = document.querySelector('#telefono');
-        const estatura = document.querySelector('#estatura').value.trim();
+        const estatura = document.querySelector('#estatura');
 
         // Validar correo institucional
         const emailRegex = /^[a-zA-Z0-9._%+-]+@alumno\.ipn\.mx$/;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Validar estatura (números positivos, permitiendo decimales)
 
-        if (!validarEstatura(estatura)) {
+        if (!validarEstatura(estatura.value.trim())) {
             alert("La estatura debe ser un valor válido entre 0.50 y 2.50 metros.");
             return;
         }
