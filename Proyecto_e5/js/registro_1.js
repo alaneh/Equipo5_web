@@ -31,6 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const altura = parseFloat(estatura);
         return altura >= 0.50 && altura <= 2.50; // Rango lógico para humanos
     }
+    function validarCasillero(casilleroInput){
+        const lockerRegex = /^\d+$/; // Acepta solo números enteros positivos o cero
+        if (!lockerRegex.test(casilleroInput)) {
+            return false;
+        }
+        const casillero = casilleroInput;
+        return casillero >= 1 && casillero <= 560;
+    }
     // Manejar el clic en el botón "Siguiente"
     siguienteBtn.addEventListener("click", function () {
         const nombreInput = document.querySelector('#nombre');
@@ -84,10 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Validar casillero si es renovación (número entero no negativo)
         const tipoSolicitud = document.querySelector('input[name="solicitud"]:checked').id;
-        const lockerRegex = /^\d+$/; // Acepta solo números enteros positivos o cero
+        
         if (tipoSolicitud === "renovacion") {
-            if (!lockerRegex.test(casilleroInput.value)) {
-                alert("El número de casillero debe ser un número entero no negativo.");
+            if (!validarCasillero(casilleroInput.value)) {
+                alert("El número de casillero debe ser un número entero no negativo entre 1 y 560");
                 return;
             }
         }

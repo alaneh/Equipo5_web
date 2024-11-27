@@ -22,7 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('Por favor, ingrese un usuario y una contraseña válidos.');
             return;
         }
-
+        // Regex para validar usuario
+        const usuarioRegex = /^[a-zA-Z0-9]+$/;
+        if (!usuarioRegex.test(usuario.trim())) {
+            alert('El usuario solo puede contener letras y números, sin espacios.');
+            return;
+        }
         // Guardar nombres de archivos en localStorage
         datos.archivoCredencial = credencialInput.files[0]?.name || 'No subido';
         datos.archivoHorario = horarioInput.files[0]?.name || 'No subido';
