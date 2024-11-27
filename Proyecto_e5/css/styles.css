@@ -163,7 +163,7 @@ a:hover{
 }
 /* Estilo base del carrusel */
 .carousel-item img {
-  object-fit: cover; /* Las imágenes llenarán el contenedor manteniendo su proporción */
+  object-fit: contain; /* Las imágenes llenarán el contenedor manteniendo su proporción */
   width: 100%;       /* Asegura que siempre ocupe todo el ancho del contenedor */
   height: auto;      /* Se adapta automáticamente al ancho */
   max-height: 75vh;  /* Limita la altura en dispositivos grandes */
