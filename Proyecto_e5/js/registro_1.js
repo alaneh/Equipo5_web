@@ -31,31 +31,63 @@ document.addEventListener("DOMContentLoaded", function () {
         // Validar correo institucional
         const emailRegex = /^[a-zA-Z0-9._%+-]+@alumno\.ipn\.mx$/;
         if (!emailRegex.test(correoInput.value)) {
-            alert("El correo debe ser institucional.");
+            alert("El correo debe ser institucional y terminar en @alumno.ipn.mx.");
             return;
         }
 
-        // Validar número de boleta
-        const boletaRegex = /^\d{4}63\d{4}$/; // Debe contener "63" en las posiciones 5 y 6
+        // Validar número de boleta (solo números positivos con "63" en el formato)
+        const boletaRegex = /^\d{4}63\d{4}$/;
         if (!boletaRegex.test(boletaInput.value)) {
-            alert("Ingresa una boleta de ESCOM.");
+            alert("Ingresa un número de boleta válido de ESCOM (formato: 4 dígitos, '63', 4 dígitos).");
             return;
         }
 
-        // Validar casillero si es renovación
-        const tipoSolicitud = document.querySelector('input[name="solicitud"]:checked').id;
-        if (tipoSolicitud === "renovacion" && !casilleroInput.value) {
-            alert("Por favor, ingresa tu número de casillero para la renovación.");
+        // Validar nombre y apellidos (solo letras con mayúsculas, minúsculas y tildes)
+        const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+        if (!nameRegex.test(nombreInput.value.trim())) {
+            alert("El nombre solo puede contener letras y espacios.");
             return;
+        }
+        if (!nameRegex.test(apellidoPaterno.value.trim())) {
+            alert("El apellido paterno solo puede contener letras y espacios.");
+            return;
+        }
+        if (!nameRegex.test(apellidoMaterno.value.trim())) {
+            alert("El apellido materno solo puede contener letras y espacios.");
+            return;
+        }
+
+        // Validar teléfono (10 dígitos, solo números enteros y positivos)
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(telefono.value)) {
+            alert("El teléfono debe contener exactamente 10 dígitos numéricos.");
+            return;
+        }
+
+        // Validar estatura (números positivos, permitiendo decimales)
+        const heightRegex = /^[1-9]\d*(\.\d+)?$/;
+        if (!heightRegex.test(estatura.value)) {
+            alert("La estatura debe ser un número positivo (puede incluir decimales).");
+            return;
+        }
+
+        // Validar casillero si es renovación (número entero no negativo)
+        const tipoSolicitud = document.querySelector('input[name="solicitud"]:checked').id;
+        const lockerRegex = /^\d+$/; // Acepta solo números enteros positivos o cero
+        if (tipoSolicitud === "renovacion") {
+            if (!lockerRegex.test(casilleroInput.value)) {
+                alert("El número de casillero debe ser un número entero no negativo.");
+                return;
+            }
         }
 
         // Guardar datos en localStorage
         const datos = {
             tipoSolicitud: tipoSolicitud === "renovacion" ? "Renovación" : "Solicitar por primera vez",
             numeroLocker: casilleroInput?.value || "N/A",
-            nombre: nombreInput.value,
-            apellidoPaterno: apellidoPaterno.value,
-            apellidoMaterno: apellidoMaterno.value,
+            nombre: nombreInput.value.trim(),
+            apellidoPaterno: apellidoPaterno.value.trim(),
+            apellidoMaterno: apellidoMaterno.value.trim(),
             telefono: telefono.value,
             correo: correoInput.value,
             boleta: boletaInput.value,
