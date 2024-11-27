@@ -20,13 +20,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Validar estatura en metros (ej: 1.50, 2.00)
+    function validarEstatura(estatura) {
+        const heightRegex = /^(0(\.\d+)?|[1-2](\.\d+)?|2\.5)$/; // Solo números positivos entre 0 y 2.5
+        if (!heightRegex.test(estatura)) {
+            return false; // No es válido
+        }
+
+        // Convertir a número para asegurarse de que está en rango
+        const altura = parseFloat(estatura);
+        return altura >= 0.50 && altura <= 2.50; // Rango lógico para humanos
+    }
     // Manejar el clic en el botón "Siguiente"
     siguienteBtn.addEventListener("click", function () {
         const nombreInput = document.querySelector('#nombre');
         const apellidoPaterno = document.querySelector('#apellidoPaterno');
         const apellidoMaterno = document.querySelector('#apellidoMaterno');
         const telefono = document.querySelector('#telefono');
-        const estatura = document.querySelector('#estatura');
+        const estatura = document.querySelector('#estatura').value.trim();
 
         // Validar correo institucional
         const emailRegex = /^[a-zA-Z0-9._%+-]+@alumno\.ipn\.mx$/;
@@ -65,9 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Validar estatura (números positivos, permitiendo decimales)
-        const heightRegex = /^[1-9]\d*(\.\d+)?$/;
-        if (!heightRegex.test(estatura.value)) {
-            alert("La estatura debe ser un número positivo (puede incluir decimales).");
+
+        if (!validarEstatura(estatura)) {
+            alert("La estatura debe ser un valor válido entre 0.50 y 2.50 metros.");
             return;
         }
 
