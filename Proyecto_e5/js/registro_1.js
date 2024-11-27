@@ -60,11 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
         if (!nameRegex.test(apellidoPaterno.value.trim())) {
-            alert("El apellido paterno solo puede contener letras y espacios.");
+            alert("El primer apellido solo puede contener letras y espacios.");
             return;
         }
         if (!nameRegex.test(apellidoMaterno.value.trim())) {
-            alert("El apellido materno solo puede contener letras y espacios.");
+            alert("El segundo apellido solo puede contener letras y espacios.");
             return;
         }
 
